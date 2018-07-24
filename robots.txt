@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /test
+Disallow: /form_msg.html
+Disallow: /form_callback.html
+Disallow: /thank_you.html
+Host: https://vitronite.ru
+Sitemap: https://vitronite.ru/sitemap.xml

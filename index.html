@@ -1,0 +1,118 @@
+---
+title: А510 - Проектирование и строительство частных домов и коттеджей
+description: Архитектурное и инженерное проектирование, строительство частных загородных домов и коттеджей в Подмосковье и Новой Москве.
+layout: index-page
+permalink: /
+
+
+---
+<div class="front">
+	<header class="align-center">
+		<h1>Наша архитектура - ваша история</h1>
+	</header>
+	<div class="row">
+		<div class="6u 12u(medium)">
+			<section>
+				<header>
+					<h3>Группа компаний А510</h3>
+				</header>
+				<p>А510 - это группа компаний, объединяющая строительную организацию, инвестиционную компанию и архитектурное бюро. Нам важно качество того, что вы получите, - то есть вашего дома, офиса или города. Мы не можем позволить себе обмануть ваши ожидания, а часто превосходим их, - именно поэтому вы возвращаетесь к нам за новыми интересными проектами.</p>
+			</section>
+		</div>
+		<div class="6u 12u(medium)">
+			<section>
+				<header>
+					<h3>ТРИ НАПРАВЛЕНИЯ</h3>
+				</header>
+				<ul>
+					<li>Готовые проекты</li>
+					<li>Архитурное проектирование</li>
+					<li>Строительство</li>
+				</ul>
+				<p>Вместе с А510 вы можете пройти путь от любой вашей идеи до ее реализации. Все, что вам нужно, - сообщить нам ваши исходные данные, мы умеем с ними работать. Сроки? Бюджет? Зыбучие пески на участке? Мы знаем, что нужно делать.</p>
+			</section>
+		</div>
+	</div>
+</div>
+<section class="front">
+	<header class="align-center">
+		<h2>Готовые проекты</h2>
+	</header>
+	<div class="row">
+		<div class="8u 12u(medium)">
+			<p>Вы готовы начать строить дом уже завтра, но все еще не нашли подходящий проект - тут мы придем вам на помощь. Проекты всех домов на этой странице уже готовы, вам остается только выбрать созвучный вашим вкусам и связаться с нами для уточнения некоторых деталей.</p>
+		</div>
+		<div class="4u 12u(medium)">
+			<ul class="actions vertical small align-left arrow-alt">
+				<li><a href="/proekty/doma-kottedji/">Дома и коттеджи</a></li>
+				<li><a href="/proekty/taunhausy-dupleksy/">Таунхаусы - дуплексы</a></li>
+				<li><a href="/proekty/kvadrohausy/">Квадрохаусы</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="row uniform">
+		{% assign sorted_cat = site.proekty | sort: 'weight' %}
+		{% assign i = 0 %}
+		{% for project in sorted_cat %}
+			{% if project.type != "category" and project.featured %}
+				{% assign i = i | plus: 1 %}
+				{% if i > 6 %}
+					{% break %}
+				{% endif %}
+				<div class="4u 6u(medium) 12u(xsmall)">
+					<div class="box alt">
+						<a href="{{project.url}}" class="image fit project">
+							<img src="/images/{{project.url}}-1-small.jpg" alt="{{project.tiny-description}}" title="{{project.project-catalog-title}}">
+							<div class="project-wrapper">
+								<h3>{{project.project-catalog-title}} <span>{{project.project-name}}</span></h3>
+								<p>{{project.tiny-description}}</p>
+							</div>
+						</a>
+						<h4><a href="{{project.url}}">{{project.project-name}}</a></h4>
+						{% if project.area %}
+						<h4 class="area">{{project.area}}м<sup>2</sup></h4>
+						{% endif %}
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+	<footer class="align-center">
+		<ul class="actions">
+			<li><a class="button" href="/proekty/">Смотреть все проекты</a></li>
+		</ul>
+	</footer>
+</section>
+<section class="front">
+	<header class="align-center">
+		<h2>Строительство</h2>
+	</header>
+	<div class="row 200%">
+		<div class="7u 12u(medium)">
+			<a class="image main" href="/stroyka"><img src="/images/stroika2.jpg" alt="Строительство частных домов"></a>
+		</div>
+		<div class="5u 12u(medium)">
+			<p>Строительство может проходить без проблем и заминок - даже таких частых, как несогласованность действий проектировщика и подрядчика. Мы - архитекторы. Мы знаем свои проекты. Мы с самого начала рисовали ваш проект вместе с вами. Мы знаем, как для вас важны детали, как важно вам увидеть то, что вы видите на картинке. Мы знаем, как важно остаться в рамках согласованной сметы. И мы умеем руководить строительством так, чтобы и вы, и мы остались довольны результатом.</p>
+			<ul class="actions">
+				<li><a class="button alt" href="/stroyka">Подробнее</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="front">
+	<header class="align-center">
+		<h2>Архитектурное бюро А510</h2>
+	</header>
+	<div class="row 200%">
+		<div class="7u 12u(medium)">
+			<a class="image main" href="/architektura"><img src="/images/archi2.jpg" alt="Архитектурное проектирование"></a>
+		</div>
+		<div class="5u 12u(medium)">
+			<p>Все объекты для нас одинаково важны, второстепенных не бывает. Вне зависимости от того, что мы проектируем, - небольшую беседку или международный аэропорт - принцип подхода не меняется: в любой детали должна быть логика, любое предлагаемое решение должно быть обосновано.</p>
+			<p>Каждый наш проект всегда отвечает трем основным запросам: функциональность, надежность и визуальная гармония с контекстом. Мы работаем с объектами любого типа и любой сложности; желание - ваше, реализация - за нами.</p>
+			<ul class="actions">
+				<li><a class="button alt" href="/architektura">Услуги и цены</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
